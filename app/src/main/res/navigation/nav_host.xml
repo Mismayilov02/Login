@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_navhost"
+    app:startDestination="@id/splashScreen">
+
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="com.example.pin_codeforthepractice.SplashScreen"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/navhost_splash_tocreate"
+            app:destination="@id/createPassword" />
+        <action
+            android:id="@+id/navhost_splash_to_login"
+            app:destination="@id/logInPassword" />
+    </fragment>
+    <fragment
+        android:id="@+id/createPassword"
+        android:name="com.example.pin_codeforthepractice.CreatePassword"
+        android:label="fragment_create_password"
+        tools:layout="@layout/fragment_create_password" >
+        <action
+            android:id="@+id/navhost_create_tologn"
+            app:destination="@id/logInPassword" />
+    </fragment>
+    <fragment
+        android:id="@+id/logInPassword"
+        android:name="com.example.pin_codeforthepractice.LogInPassword"
+        android:label="fragment_log_in_password"
+        tools:layout="@layout/fragment_log_in_password" >
+        <action
+            android:id="@+id/navhost_login_back_create"
+            app:destination="@id/createPassword" />
+    </fragment>
+</navigation>
